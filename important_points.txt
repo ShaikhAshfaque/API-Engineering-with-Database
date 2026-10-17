@@ -1,0 +1,166 @@
+# ============================================================
+# FASTAPI — 50 IMPORTANT TECHNICAL QUESTIONS
+# AI ENGINEER / GENAI ENGINEER / FDE
+# ============================================================
+
+# 01. FastAPI kya hai aur AI/GenAI applications mein ise Flask ke comparison mein
+#     kab aur kyun use karenge?
+
+# 02. FastAPI mein FastAPI() object kya karta hai aur application lifecycle
+#     kaise manage hota hai?
+
+# 03. FastAPI mein API endpoint kya hota hai aur @app.get(), @app.post(),
+#     @app.put(), @app.patch(), @app.delete() mein kya difference hai?
+
+# 04. FastAPI mein path parameter aur query parameter mein kya difference hai?
+#     Example: /users/{user_id} vs /users?user_id=10
+
+# 05. FastAPI mein Pydantic BaseModel ka use kyun hota hai?
+#     AI application ke request validation mein iska kya role hai?
+
+# 06. Pydantic model mein Field() ka use kya hai?
+#     min_length, max_length, ge, le jaise validators kaise kaam karte hain?
+
+# 07. FastAPI mein request body kya hoti hai aur JSON request ko Pydantic model
+#     ke through kaise validate karte hain?
+
+# 08. FastAPI mein response_model kya hai aur AI/GenAI API mein ise use karne
+#     ka benefit kya hai?
+
+# 09. FastAPI mein HTTPException kya hai?
+#     400, 401, 403, 404 aur 500 errors ko kaise handle karenge?
+
+# 10. FastAPI mein status_code parameter kaise use hota hai?
+#     POST request ke liye 201 Created kab return karna chahiye?
+
+# 11. FastAPI mein async def aur normal def endpoint mein kya difference hai?
+#     AI/LLM APIs mein async programming important kyun hai?
+
+# 12. FastAPI mein await keyword kya karta hai?
+#     LLM API, database aur external API calls mein iska kya role hai?
+
+# 13. FastAPI mein dependency injection kya hai?
+#     Depends() ka use authentication, database aur common logic ke liye kaise karte hain?
+
+# 14. FastAPI mein database connection ko Depends() ke through kaise manage karenge?
+#     Connection/session lifecycle kaise handle hoga?
+
+# 15. FastAPI mein middleware kya hota hai?
+#     Request aur response ke beech middleware kaise execute hota hai?
+
+# 16. FastAPI mein CORS kya hai?
+#     Frontend React/Next.js application ko FastAPI backend se connect karte waqt
+#     CORSMiddleware kyun required hota hai?
+
+# 17. FastAPI mein authentication aur authorization mein kya difference hai?
+#     AI application mein dono ko kaise implement karenge?
+
+# 18. FastAPI mein JWT Bearer Token authentication kaise implement karenge?
+#     Token generate, validate aur user identify kaise karenge?
+
+# 19. FastAPI mein API key authentication kya hai?
+#     Internal AI services ya LLM microservices mein iska use kab karenge?
+
+# 20. FastAPI mein OAuth2PasswordBearer kya hai?
+#     JWT-based authentication architecture mein iska role kya hai?
+
+# 21. FastAPI mein rate limiting kya hai?
+#     LLM API ko abuse aur excessive token/API costs se kaise protect karenge?
+
+# 22. FastAPI mein SlowAPI kya hai?
+#     @limiter.limit("5/minute") jaise rate limits kaise implement karte hain?
+
+# 23. FastAPI mein input validation kyun important hai?
+#     Agar user malicious ya invalid prompt/data bheje to API level par
+#     validation kaise karenge?
+
+# 24. FastAPI mein global exception handler kya hota hai?
+#     Custom exception ko centrally kaise handle karenge?
+
+# 25. FastAPI mein logging kaise implement karenge?
+#     Production GenAI API mein request ID, latency aur error logs kyun important hain?
+
+# 26. FastAPI mein background tasks kya hain?
+#     BackgroundTasks ka use email, logging, analytics ya non-blocking jobs ke liye
+#     kaise kar sakte hain?
+
+# 27. FastAPI mein StreamingResponse kya hai?
+#     LLM ke token-by-token response ko client tak stream karne ke liye iska
+#     use kaise karenge?
+
+# 28. FastAPI mein Server-Sent Events (SSE) kya hai?
+#     ChatGPT-type streaming response implement karne mein SSE kaise useful hai?
+
+# 29. FastAPI mein WebSocket kya hai?
+#     WebSocket aur normal REST API mein kya difference hai?
+#     Real-time AI applications mein WebSocket kab use karenge?
+
+# 30. FastAPI mein file upload kaise implement karenge?
+#     UploadFile aur File() ka use document-based RAG system mein kaise karenge?
+
+# 31. PDF/document upload ke baad FastAPI mein complete RAG pipeline kaise trigger
+#     karenge — upload → parsing → chunking → embedding → vector DB?
+
+# 32. FastAPI ko LangChain ke saath kaise integrate karenge?
+#     User query ko FastAPI endpoint se LangChain RAG chain tak kaise bhejenge?
+
+# 33. FastAPI ko LlamaIndex ke saath kaise integrate karenge?
+#     API request se retrieval aur LLM response tak complete flow explain karein.
+
+# 34. FastAPI mein LLM API integration kaise karenge?
+#     OpenAI/Gemini/Anthropic jaise external model APIs ko securely kaise call karenge?
+
+# 35. FastAPI mein environment variables kaise manage karte hain?
+#     API keys, database URL aur secrets ko source code mein hardcode kyun nahi karna chahiye?
+
+# 36. FastAPI application ko PostgreSQL/Supabase ke saath kaise connect karenge?
+#     CRUD operations ko API endpoints se kaise expose karenge?
+
+# 37. FastAPI mein PUT aur PATCH mein kya difference hai?
+#     AI application ke user/profile/configuration update API mein dono ko kab use karenge?
+
+# 38. FastAPI mein Pydantic model ka exclude_unset=True kya karta hai?
+#     PATCH API mein ye important kyun hai?
+
+# 39. FastAPI mein response.data kya represent karta hai jab Supabase/PostgREST
+#     se database response receive hota hai?
+
+# 40. FastAPI application ko Docker container mein kaise deploy karenge?
+#     Uvicorn/Gunicorn aur Docker ka production architecture kya hoga?
+
+# 41. Uvicorn kya hai aur FastAPI application ko run karne mein iska kya role hai?
+#     `uvicorn main:app --reload` command ko explain karein.
+
+# 42. FastAPI mein multiple workers kya hote hain?
+#     CPU-bound aur I/O-bound workloads ke liye workers kaise decide karenge?
+
+# 43. FastAPI application ko AWS/Azure/GCP par deploy karte waqt architecture
+#     kaise design karenge?
+#     Load Balancer, API, database aur Redis ka role kya hoga?
+
+# 44. FastAPI + Redis ka use AI/GenAI application mein kyun karenge?
+#     Caching, session state, queue aur rate limiting mein Redis ka role explain karein.
+
+# 45. FastAPI + Celery/RQ/queue architecture kab use karenge?
+#     Long-running embedding, document processing ya model inference jobs ko
+#     synchronous API se alag kyun rakhna chahiye?
+
+# 46. FastAPI AI application mein latency kaise measure karenge?
+#     API latency, LLM latency, retrieval latency aur database latency ko
+#     separately kaise monitor karenge?
+
+# 47. FastAPI GenAI application mein observability kaise implement karenge?
+#     Logs, metrics, traces, token usage, latency aur error rate ko kaise track karenge?
+
+# 48. FastAPI API ko production mein secure kaise karenge?
+#     Authentication, authorization, rate limiting, input validation, CORS,
+#     secrets management aur HTTPS ka role explain karein.
+
+# 49. FastAPI + RAG + Vector Database + LLM ka complete production architecture
+#     design karein.
+#     Explain: Client → FastAPI → Auth → Retrieval → Vector DB → Reranker →
+#     LLM → Streaming Response.
+
+# 50. Ek production-grade GenAI application ke liye FastAPI architecture design karein.
+#     Explain: Frontend → API Gateway → FastAPI → Auth → Redis → PostgreSQL →
+#     Vector DB → RAG → LLM → Monitoring → Docker/Kubernetes → Cloud.

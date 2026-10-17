@@ -138,7 +138,6 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-
 @app.get("/test-cors")
 def test_cors():
 

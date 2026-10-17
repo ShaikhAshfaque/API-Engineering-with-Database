@@ -107,3 +107,17 @@ def access_profile(token=Depends(security)):
 def access_course(token=Depends(security)):
     decoded = jwt.decode(token.credentials, SECRET_KEY, algorithms=["HS256"])
     return {"status": "success", "username": decoded["sub"]}
+
+
+# 200  success
+# 201 create
+# 400 invalid req
+# 401 invalid token 
+# 403 insufficient permission
+# 404 doesn't exists
+# 500 server failure
+# 100 - 199 information
+# 200 - 299 success code
+# 300 - 399 redirection
+# 400 - 499 client error 
+# 500 - 599 server side error 
